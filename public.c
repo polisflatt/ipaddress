@@ -18,10 +18,10 @@ void print_ip(enum IP ip_type) {
     }
 
     curl_easy_setopt(curl, CURLOPT_URL, IP_LINK); /* URL */
-	curl_easy_setopt(curl, CURLOPT_WRITEDATA, stdout); /* write to FILE* fp = fopen("/dev/stdout", "w"); */
-	int result = curl_easy_perform(curl); /* Curl it!--and do someother things */
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, stdout); /* write to FILE* fp = fopen("/dev/stdout", "w"); */
+    int result = curl_easy_perform(curl); /* Curl it!--and do someother things */
 
-	curl_easy_cleanup(curl);
+    curl_easy_cleanup(curl);
 
     /* Some error handling */
 
