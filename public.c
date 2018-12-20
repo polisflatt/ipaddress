@@ -8,10 +8,13 @@
 void print_ip(enum IP ip_type) {
     CURL* curl = curl_easy_init(); /* Initalize cURL */
 
-    if (ip_type == IPV4) { /* Are we using IPV4 or IPV6? */
-        curl_easy_setopt(curl, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
-    } else if (ip_type == IPV6) {
-        curl_easy_setopt(curl, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V6);
+    switch (ip_type) { /* Determine IP type */
+        case IPV4:
+            curl_easy_setopt(curl, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
+            break;
+        case IPV6:
+            curl_easy_setopt(curl, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V6);
+            break;
     }
 
     curl_easy_setopt(curl, CURLOPT_URL, IP_LINK); /* URL */
