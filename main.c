@@ -2,8 +2,8 @@
 #include <string.h>
 
 #include <curl/curl.h>
-#include "config.h"
 
+#include "config.h"
 #include "public.c"
 #include "private.c"
 
